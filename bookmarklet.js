@@ -4,19 +4,30 @@
 // ==/Bookmarklet==
 
 (async () => {
+  const url = window.location.href.trim().split("?")[0];
+  const isLinkedIn = url.includes("linkedin.com");
+
+  if (!isLinkedIn) {
+    console.error("This bookmarklet only works on LinkedIn job postings.");
+    return;
+  }
+  if (!isLinkedIn) {
+    console.error("This bookmarklet only works on LinkedIn job postings.");
+    return;
+  }
+
   const jobDescription = document.querySelector(
     "[data-testid=expandable-text-box]",
-  ).innerHTML;
+  ).innerText;
   const jobTitle = document.querySelector("title");
-  const url = window.location.href;
 
   if (jobDescription && jobTitle && url) {
     navigator.clipboard
       .writeText(
         JSON.stringify({
-          title: jobTitle.innerText,
-          description: jobDescription,
-          url: url,
+          jobTitle: jobTitle.innerText,
+          jobDescription: jobDescription,
+          jobUrl: url,
         }),
       )
       .then(() => {
