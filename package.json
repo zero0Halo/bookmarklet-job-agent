@@ -1,0 +1,26 @@
+{
+  "name": "bookmarklet-job-agent",
+  "version": "1.0.0",
+  "description": "A bookmarklet that works in conjunction with job-agent",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:bookmarklet && npm run build:demo",
+    "build:bookmarklet": "bookmarklet bookmarklet.js dist/output.js",
+    "build:demo": "bookmarklet --demo bookmarklet.js dist/demo.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zero0Halo/bookmarklet-job-agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zero0Halo/bookmarklet-job-agent/issues"
+  },
+  "homepage": "https://github.com/zero0Halo/bookmarklet-job-agent#readme",
+  "devDependencies": {
+    "bookmarklet": "^3.0.0"
+  }
+}

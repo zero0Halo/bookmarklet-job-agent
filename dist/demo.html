@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      html,body,div { margin: 0; padding: 0; font: normal 16px/24px Helvetica Neue, Helvetica, sans-serif; color: #333; }
+      #main { max-width: 630px; margin: 3em auto; }
+      .bookmarklet { display: inline-block; padding: .5em 1em; color: #fff; background: #50dcf3; border-radius: 4px; text-decoration: none; }
+      a { color: #50dcf3; }
+      .dim { color: #999; }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Bookmarklet Job Agent</h1>
+      <p>
+        Drag this button to your bookmarks bar to save it as a bookmarklet:
+      </p>
+      <p>
+        <a class="bookmarklet" href="javascript:(function()%7B(async()%3D%3E%7Bconst%20o%3Ddocument.querySelector(%22%5Bdata-testid%3Dexpandable-text-box%5D%22).innerHTML%2Ce%3Ddocument.querySelector(%22title%22)%2Ct%3Dwindow.location.href%3Bo%26%26e%26%26t%3Fnavigator.clipboard.writeText(JSON.stringify(%7Btitle%3Ae.innerText%2Cdescription%3Ao%2Curl%3At%7D)).then(()%3D%3E%7Bconsole.info(%22Successfully%20copied%20to%20clipboard!%5Cn%22)%7D).catch(o%3D%3E%7Bconsole.error(%22Failed%20to%20copy%20to%20clipboard%3A%20%22%2Co)%7D)%3Aconsole.error(%22Could%20not%20find%20job%20description%2C%20title%2C%20or%20URL%22)%7D)()%3B%7D)()">Bookmarklet Job Agent</a>
+      </p>
+      
+      <p class="dim">This page was created with the <a href="https://github.com/mrcoles/bookmarklet">bookmarklet</a> npm library.</p>
+    </div>
+  </body>
+</html>
