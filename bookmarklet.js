@@ -11,21 +11,17 @@
     console.error("This bookmarklet only works on LinkedIn job postings.");
     return;
   }
-  if (!isLinkedIn) {
-    console.error("This bookmarklet only works on LinkedIn job postings.");
-    return;
-  }
 
   const jobDescription = document.querySelector(
     "[data-testid=expandable-text-box]",
   ).innerText;
-  const jobTitle = document.querySelector("title");
+  const pageTitle = document.querySelector("title");
 
-  if (jobDescription && jobTitle && url) {
+  if (jobDescription && pageTitle && url) {
     navigator.clipboard
       .writeText(
         JSON.stringify({
-          jobTitle: jobTitle.innerText,
+          pageTitle: pageTitle.innerText,
           jobDescription: jobDescription,
           jobUrl: url,
         }),
